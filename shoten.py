@@ -1,3 +1,6 @@
+#usr/bin/env python
+#coding:utf-8
+
 import numpy as np
 import re
 import emoji
@@ -58,7 +61,7 @@ def zabuton_challenge(insert_text):
     elif(zabuton_clf.predict(vector)[0] < 0):
         print("山田くん！"+str(speaker_clf.predict(vector)[0])+"さんに"+str(zabuton_clf.predict(vector)[0])+"枚差し上げて！")
     elif(zabuton_clf.predict(vector)[0] > 0):
-        print("山田くん！"+str(speaker_clf.predict(vector)[0])+"さんの"+str(zabuton_clf.predict(vector)[0])+"枚持ってって！")
+        print("山田くん！"+str(speaker_clf.predict(vector)[0])+"さんの"+str(zabuton_clf.predict(vector)[0] * -1)+"枚持ってって！")
     else:
         print("山田くん！エラー出す分類器作った開発者の座布団全部持ってけ！")
         
